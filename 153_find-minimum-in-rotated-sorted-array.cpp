@@ -13,7 +13,19 @@ public:
 
     //二分查找
     int findMin(vector<int>& nums) {
-    
+        int l_it = 0, r_it = nums.size() - 1;
+        while (l_it < r_it){
+            int pivot = (l_it + r_it) / 2;
+            if (nums[r_it] > nums[pivot]){
+                r_it = pivot;
+            }
+            else{
+                l_it = pivot + 1;
+            }
+
+        }
+        return nums[l_it];
+
 
 
     }
