@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //mine
     int removeDuplicates(vector<int>& nums) {
         if (!nums.size()) return 0;
         int i = 0, dup = 1;
@@ -20,4 +21,20 @@ public:
         }
         return i + (dup > 1 ? 2 : 1);
     }
+
+    //leetcode official
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        if (n <= 2) return n; //when size of nums[] is eq or les than 2, we can directly return it
+        int slow = 2, fast = 2;
+        while (fast < n) {
+            if (nums[slow - 2] != nums[fast]) {
+                nums[slow] = nums[fast];
+                ++slow;
+            }
+            ++fast;
+        }
+        return slow;
+    }
+
 };
