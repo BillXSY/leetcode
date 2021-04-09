@@ -11,7 +11,7 @@ public:
       return temp;
     }
 
-    //二分查找
+    //二分查找!
     int findMin(vector<int>& nums) {
         int l_it = 0, r_it = nums.size() - 1;
         while (l_it < r_it){
