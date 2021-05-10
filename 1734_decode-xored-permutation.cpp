@@ -17,9 +17,7 @@ public:
         for (int i = 1; i <= perm_size; ++i) {
             XOR_all ^= i;
         }
-        for (int i = 1; i < perm_size - 1; i += 2) {
-            XOR_all ^= encoded[i];
-        }
+        for (int i = 1; i < perm_size - 1; i += 2)    XOR_all ^= encoded[i];
         int curr = XOR_all;
         vector<int> rslt;
         for (int i = 0; i < perm_size - 1; ++i) {
