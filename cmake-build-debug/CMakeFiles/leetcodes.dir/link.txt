@@ -1,0 +1,3 @@
+C:\Users\71401\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7148.70\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\leetcodes.dir/objects.a
+D:\MinGW\mingw64\bin\ar.exe cr CMakeFiles\leetcodes.dir/objects.a @CMakeFiles\leetcodes.dir\objects1.rsp
+D:\MinGW\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\leetcodes.dir/objects.a -Wl,--no-whole-archive  -o leetcodes.exe -Wl,--out-implib,libleetcodes.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\leetcodes.dir\linklibs.rsp
