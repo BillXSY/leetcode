@@ -14,16 +14,6 @@ private:
     Trie *root = new Trie();
     static constexpr int HIGH_BIT = 30;
 
-    int get_index(vector<int> target, vector<vector<int>>& queries, vector<int> rslt){
-        int s = queries.size();
-        for (int i = 0; i < s; ++i) {
-            if (queries[i][0] == target[0] && queries[i][1] == target[1] && rslt[i] == 0) {
-                cout << "the index is: " << i << '\n';
-                return i;
-            }
-        }
-        return -1;
-    }
 public:
 //    add a new number into the Trie Tree
     void add(int num){
@@ -42,7 +32,7 @@ public:
                 curr = curr->right;
             }
         }
-        cout << num << " is added" << endl;
+//        cout << num << " is added" << endl;
     }
 
 //    return the XOR value basing on the existing trie tree
@@ -71,46 +61,42 @@ public:
             }
 
         }
-        cout << num << " is checked, the result is " << x << ' ';
+//        cout << num << " is checked, the result is " << x << ' ';
         return x;
     }
 
     vector<int> maximizeXor(vector<int>& nums, vector<vector<int>>& queries) {
-        vector<vector<int>> q = queries;
-        sort(q.begin(), q.end(), [](const vector<int> &x,  const vector<int> &y) {
+
+        int m_size = queries.size(), n_size = nums.size();
+        vector<int> rslt(m_size);
+
+
+        for (int i = 0; i < m_size; ++i) {
+            queries[i].push_back(i);
+        }
+        sort(queries.begin(), queries.end(), [](const vector<int> &x,  const vector<int> &y) {
             return x[1] < y[1];
         });
 
-        std::sort(nums.begin(), nums.end());
-
-/*       for (vector<int> v : queries) {
-            cout << "[" << v[0] << ', ' << v[1] << '], ';
-        }
-        for (int i : nums) {
-            cout << i << ' ';
-        }
-        return queries[0];*/
-
-
+        sort(nums.begin(), nums.end());
         int m_index = 0, n_index = 0;
-        int m_size = q.size(), n_size = nums.size();
-        vector<int> rslt(m_size);
-
-        while (( n_index < n_size && m_index < m_size)) {
-            if (nums[0] > q[m_index][1]) {
-                cout << q[m_index][1] << " is too small" << endl;
-                rslt[get_index(q[m_index++],queries, rslt)] = -1;
-            }
+        while (nums[0] > queries[m_index][1]) {
+            rslt[queries[m_index][2]] = -1;
+            m_index++;
+        }
+        while ( n_index < n_size && m_index < m_size) {
+            vector<int> curr_q = queries[m_index];
+            int x_i = curr_q[0], m_i = curr_q[1], posi =  curr_q[2];
             for (int i = n_index; i < n_size; ++i) {
-                if (nums[i] <= q[m_index][1]) {
+                if (nums[i] <= m_i) {
                     add(nums[i]);
                 } else {
                     n_index = i;
                     break;
                 }
             }
-            int sth = get_index(q[m_index], queries, rslt);
-            rslt[sth] = check_XOR(q[m_index][0]);
+
+            rslt[ posi ] = check_XOR(x_i);
             m_index++;
 
 
