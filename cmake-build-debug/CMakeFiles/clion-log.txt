@@ -1,1 +1,1 @@
-CMakeLists.txt not found in E:\leetcode Select CMakeLists.txt
+在 E:\leetcode 中找不到 CMakeLists.txt 选择 CMakeLists.txt
