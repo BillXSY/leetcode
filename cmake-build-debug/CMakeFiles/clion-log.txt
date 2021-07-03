@@ -1,1 +1,4 @@
-在 E:\leetcode 中找不到 CMakeLists.txt 选择 CMakeLists.txt
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/e/leetcode
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/e/leetcode/cmake-build-debug
