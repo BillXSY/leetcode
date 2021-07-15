@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/e/leetcode/645_set-mismatch.cpp" "/mnt/e/leetcode/cmake-build-debug/CMakeFiles/leetcode.dir/645_set-mismatch.cpp.o"
-  "/mnt/e/leetcode/main.cpp" "/mnt/e/leetcode/cmake-build-debug/CMakeFiles/leetcode.dir/main.cpp.o"
+  "/Users/bill/CLionProjects/leetcode/645_set-mismatch.cpp" "/Users/bill/CLionProjects/leetcode/cmake-build-debug/CMakeFiles/leetcode.dir/645_set-mismatch.cpp.o"
+  "/Users/bill/CLionProjects/leetcode/main.cpp" "/Users/bill/CLionProjects/leetcode/cmake-build-debug/CMakeFiles/leetcode.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
